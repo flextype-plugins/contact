@@ -1,0 +1,34 @@
+{
+    "name": "flextype-plugins/contact",
+    "type": "project",
+    "description": "Contact for Flextype.",
+    "keywords": ["contact", "plugin", "flextype", "php"],
+    "homepage": "https://github.com/flextype-plugins/contact",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Romanenko",
+            "email": "support@flextype.org",
+            "homepage": "https://flextype.org"
+        }
+    ],
+    "support": {
+      "issues": "https://github.com/flextype-plugins/contact/issues"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-json": "*"
+    },
+    "config": {
+        "apcu-autoloader": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "7.2.0"
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "app"
+        ]
+    }
+}
