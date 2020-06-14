@@ -29,6 +29,65 @@ The following dependencies need to be downloaded and installed for Contact Plugi
 |---|---|---|
 | enabled | true | true or false to disable the plugin |
 | priority | 80 | contact plugin priority |
+| default_subject | Default subject | Default subject for email |
+| message_success | Email sended. | Message to show after email send. |
+| from.name | Flextype | From name |
+| from.email | support@flextype.org | To email |
+| to.name | Flextype | To name |
+| to.email | support@flextype.org | To email |
+
+
+### Create your own contact form
+
+here is an example of simpe contact form:
+
+```
+title: Contact
+default_field: title
+icon: 'fas fa-envelope'
+size: 6/12
+hide: true
+form:
+  action: 'contact.contactProcess'
+  buttons:
+    submit:
+      type: submit
+      title: 'Send'
+  fields:
+    mailbox:
+      type: hidden
+      default: test
+    subject:
+      title: 'Subject'
+      type: text
+      size: 6/12
+      validation:
+        required: true
+    email:
+      title: 'Email'
+      type: email
+      size: 6/12
+      validation:
+        required: true
+    message:
+      title: 'Message'
+      type: textarea
+      size: 12
+      validation:
+        required: true
+```
+
+### Usage in the TWIG templates
+
+```
+{# Show success message #}
+{% for message in flash()['success'] %}
+    {{ message }}
+{% endfor %}
+
+{# Render contact form #}
+{{ form.render(serializer_decode(filesystem_read(PATH_PROJECT ~ '/fieldsets/contact.yaml'), 'yaml'), {})|raw }}
+```
 
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/contact/blob/master/LICENSE.txt)

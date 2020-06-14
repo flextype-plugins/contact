@@ -3,3 +3,12 @@ enabled: true
 
 # Contact plugin priority
 priority: 80
+
+default_subject: Default subject
+message_success: "Email sended."
+from:
+  name: Flextype
+  email: support@flextype.org
+to:
+  name: Flextype
+  email: support@flextype.org
