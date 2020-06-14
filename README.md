@@ -20,6 +20,7 @@ The following dependencies need to be downloaded and installed for Contact Plugi
 1. Download & Install all required dependencies.
 2. Create new folder `/project/plugins/contact`
 3. Download PHP Mailer Plugin and unzip plugin content to the folder `/project/plugins/contact`
+4. Copy `_project` folder content into your `project` folder.
 
 ## Documentation
 
@@ -32,10 +33,9 @@ The following dependencies need to be downloaded and installed for Contact Plugi
 | default_subject | Default subject | Default subject for email |
 | message_success | Email sended. | Message to show after email send. |
 | from.name | Flextype | From name |
-| from.email | support@flextype.org | To email |
-| to.name | Flextype | To name |
-| to.email | support@flextype.org | To email |
-
+| from.email | support@flextype.org | From email |
+| to.name | Flextype | Receiver name. |
+| to.email | support@flextype.org | Receiver email |
 
 ### Create your own contact form
 

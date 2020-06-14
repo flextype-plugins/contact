@@ -1,0 +1,33 @@
+title: Contact
+default_field: title
+icon: 'far fa-file-alt'
+size: 6/12
+hide: true
+form:
+  action: 'contact.contactProcess'
+  buttons:
+    submit:
+      type: submit
+      title: 'Send'
+  fields:
+    mailbox:
+      type: hidden
+      default: default
+    subject:
+      title: 'Subject'
+      type: text
+      size: 6/12
+      validation:
+        required: true
+    email:
+      title: 'Email'
+      type: email
+      size: 6/12
+      validation:
+        required: true
+    message:
+      title: 'Message'
+      type: textarea
+      size: 12
+      validation:
+        required: true
