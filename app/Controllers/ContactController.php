@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Flextype;
 
+use Ramsey\Uuid\Uuid;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Slim\Http\Environment;
@@ -42,11 +43,30 @@ class ContactController extends Container
         Arr::delete($post_data, 'csrf_value');
         Arr::delete($post_data, 'form-save-action');
 
+        if (Arr::keyExists($post_data, 'mailbox')) {
+            $mailbox = $post_data['mailbox'];
+        } else {
+            $mailbox = 'default';
+        }
+
+        Arr::delete($post_data, 'mailbox');
+
+        $post_data['uuid'] = Uuid::uuid4()->toString();
+        $post_data['created_at'] = (string) date($this->registry->get('flextype.settings.date_format'), time());
+
+        if (Filesystem::has(PATH['project'] . '/mailboxes/' . $mailbox)) {
+            Filesystem::createDir(PATH['project'] . '/mailboxes/' . $mailbox . '/' . $post_data['uuid']);
+            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', $this->serializer->encode($post_data, 'yaml'));
+        } else {
+            Filesystem::createDir(PATH['project'] . '/mailboxes/' . $mailbox . '/' . $post_data['uuid']);
+            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', $this->serializer->encode($post_data, 'yaml'));
+        }
+
         // From:
-        $mail->setFrom('awilum@yandex.ru', 'Mailer');
+        $mail->setFrom($this->registry->get('plugins.contact.settings.from.email'), $this->registry->get('plugins.contact.settings.from.name'));
 
         // To:
-        $mail->addAddress('awilum@yandex.ru', 'Test');
+        $mail->addAddress($this->registry->get('plugins.contact.settings.to.email'), $this->registry->get('plugins.contact.settings.to.name'));
 
         // Content
         $mail->isHTML(true);
@@ -71,7 +91,7 @@ class ContactController extends Container
         // Send email
         $mail->send();
 
-        $this->flash->addMessage('success', 'Send');
+        $this->flash->addMessage('success', $this->registry->get('plugins.contact.settings.message_success'));
 
         return $response->withRedirect('.');
     }
