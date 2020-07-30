@@ -86,7 +86,7 @@ form:
 {% endfor %}
 
 {# Render contact form #}
-{{ form.render(serializer_decode(filesystem_read(PATH_PROJECT ~ '/fieldsets/contact.yaml'), 'yaml'), {})|raw }}
+{{ form.render(yaml_decode(filesystem_read(PATH_PROJECT ~ '/fieldsets/contact.yaml')), {})|raw }}
 ```
 
 ## LICENSE

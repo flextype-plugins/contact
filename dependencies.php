@@ -9,7 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Contact;
+
+use Flextype\Plugin\Contact\Controllers\ContactController;
 
 $flextype['ContactController'] = static function ($container) {
     return new ContactController($container);

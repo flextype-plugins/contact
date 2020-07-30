@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Contact\Controllers;
 
 use Ramsey\Uuid\Uuid;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -20,7 +20,9 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Flextype\Component\Filesystem\Filesystem;
 use Flextype\Component\Session\Session;
-use Flextype\Component\Arr\Arr;
+use Flextype\Component\Arrays\Arrays;
+
+use Flextype\App\Foundation\Container;
 
 class ContactController extends Container
 {
@@ -39,17 +41,17 @@ class ContactController extends Container
         // Get Data from POST
         $post_data = $request->getParsedBody();
 
-        Arr::delete($post_data, 'csrf_name');
-        Arr::delete($post_data, 'csrf_value');
-        Arr::delete($post_data, 'form-save-action');
+        Arrays::delete($post_data, 'csrf_name');
+        Arrays::delete($post_data, 'csrf_value');
+        Arrays::delete($post_data, 'form-save-action');
 
-        if (Arr::keyExists($post_data, 'mailbox')) {
+        if (Arrays::keyExists($post_data, 'mailbox')) {
             $mailbox = $post_data['mailbox'];
         } else {
             $mailbox = 'default';
         }
 
-        Arr::delete($post_data, 'mailbox');
+        Arrays::delete($post_data, 'mailbox');
 
         $post_data['uuid'] = Uuid::uuid4()->toString();
         $post_data['created_at'] = (string) date($this->registry->get('flextype.settings.date_format'), time());
@@ -74,7 +76,7 @@ class ContactController extends Container
         // Get subject from POST DATA or set DEFAULT from contact settings
         if (isset($post_data['subject'])) {
             $mail->Subject = $post_data['subject'];
-            Arr::delete($post_data, 'subject');
+            Arrays::delete($post_data, 'subject');
         } else {
             $mail->Subject = $this->registry->get('plugins.contact.settings.default_subject');
         }
