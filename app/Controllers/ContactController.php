@@ -22,10 +22,21 @@ use Flextype\Component\Filesystem\Filesystem;
 use Flextype\Component\Session\Session;
 use Flextype\Component\Arrays\Arrays;
 
-use Flextype\App\Foundation\Container;
-
-class ContactController extends Container
+class ContactController
 {
+    /**
+     * Flextype Application
+     */
+     protected $flextype;
+
+    /**
+     * __construct
+     */
+     public function __construct($flextype)
+     {
+         $this->flextype = $flextype;
+     }
+     
     /**
      * Proccess contact form and send
      *
@@ -54,7 +65,7 @@ class ContactController extends Container
         Arrays::delete($post_data, 'mailbox');
 
         $post_data['uuid'] = Uuid::uuid4()->toString();
-        $post_data['created_at'] = (string) date($this->registry->get('flextype.settings.date_format'), time());
+        $post_data['created_at'] = (string) date($this->flextype->container('registry')->get('flextype.settings.date_format'), time());
 
         if (Filesystem::has(PATH['project'] . '/mailboxes/' . $mailbox)) {
             Filesystem::createDir(PATH['project'] . '/mailboxes/' . $mailbox . '/' . $post_data['uuid']);
@@ -65,10 +76,10 @@ class ContactController extends Container
         }
 
         // From:
-        $mail->setFrom($this->registry->get('plugins.contact.settings.from.email'), $this->registry->get('plugins.contact.settings.from.name'));
+        $mail->setFrom($this->flextype->container('registry')->get('plugins.contact.settings.from.email'), $this->flextype->container('registry')->get('plugins.contact.settings.from.name'));
 
         // To:
-        $mail->addAddress($this->registry->get('plugins.contact.settings.to.email'), $this->registry->get('plugins.contact.settings.to.name'));
+        $mail->addAddress($this->flextype->container('registry')->get('plugins.contact.settings.to.email'), $this->flextype->container('registry')->get('plugins.contact.settings.to.name'));
 
         // Content
         $mail->isHTML(true);
@@ -78,7 +89,7 @@ class ContactController extends Container
             $mail->Subject = $post_data['subject'];
             Arrays::delete($post_data, 'subject');
         } else {
-            $mail->Subject = $this->registry->get('plugins.contact.settings.default_subject');
+            $mail->Subject = $this->flextype->container('registry')->get('plugins.contact.settings.default_subject');
         }
 
         // Get all fields data
@@ -93,7 +104,7 @@ class ContactController extends Container
         // Send email
         $mail->send();
 
-        $this->flash->addMessage('success', $this->registry->get('plugins.contact.settings.message_success'));
+        $this->flextype->container('flash')->addMessage('success', $this->flextype->container('registry')->get('plugins.contact.settings.message_success'));
 
         return $response->withRedirect('.');
     }
