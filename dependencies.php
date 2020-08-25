@@ -13,6 +13,6 @@ namespace Flextype\Plugin\Contact;
 
 use Flextype\Plugin\Contact\Controllers\ContactController;
 
-$flextype->container()['ContactController'] = static function () use ($flextype) {
-    return new ContactController($flextype);
+flextype()->container()['ContactController'] = static function () {
+    return new ContactController();
 };

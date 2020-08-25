@@ -11,4 +11,4 @@ declare(strict_types=1);
 
 namespace Flextype;
 
-$flextype->post('/contactProcess', 'ContactController:contactProcess')->setName('contact.contactProcess');
+flextype()->post('/contactProcess', 'ContactController:contactProcess')->setName('contact.contactProcess');
