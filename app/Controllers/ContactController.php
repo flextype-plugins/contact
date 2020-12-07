@@ -19,7 +19,7 @@ use Slim\Http\Uri;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Flextype\Component\Filesystem\Filesystem;
-use Flextype\Component\Session\Session;
+
 use Flextype\Component\Arrays\Arrays;
 
 class ContactController
