@@ -19,7 +19,6 @@ use Slim\Http\Uri;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Flextype\Component\Filesystem\Filesystem;
-
 use Flextype\Component\Arrays\Arrays;
 
 class ContactController
@@ -51,7 +50,7 @@ class ContactController
         Arrays::delete($post_data, 'csrf_value');
         Arrays::delete($post_data, 'form-save-action');
 
-        if (Arrays::keyExists($post_data, 'mailbox')) {
+        if (Arrays::has($post_data, 'mailbox')) {
             $mailbox = $post_data['mailbox'];
         } else {
             $mailbox = 'default';

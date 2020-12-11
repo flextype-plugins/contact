@@ -1,3 +1,10 @@
+<a name="1.4.1"></a>
+# [1.4.1](https://github.com/flextype-plugins/contact) (2020-12-11)
+
+### Bug Fixes
+
+* **controller** fix issue with arrays
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/flextype-plugins/contact) (2020-12-07)
 

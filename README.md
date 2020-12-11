@@ -91,4 +91,4 @@ form:
 
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/contact/blob/master/LICENSE.txt)
-Copyright (c) 2020 [Sergey Romanenko](https://github.com/Awilum)
+Copyright (c) 2021 [Sergey Romanenko](https://github.com/Awilum)
