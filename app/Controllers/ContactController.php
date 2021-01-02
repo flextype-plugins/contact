@@ -24,14 +24,6 @@ use Flextype\Component\Arrays\Arrays;
 class ContactController
 {
     /**
-     * __construct
-     */
-     public function __construct()
-     {
-
-     }
-
-    /**
      * Proccess contact form and send
      *
      * @param Request  $request  PSR7 request

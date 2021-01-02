@@ -10,7 +10,3 @@ declare(strict_types=1);
  */
 
 namespace Flextype\Plugin\Contact;
-
-use Flextype\Plugin\Contact\Controllers\ContactController;
-
-flextype()->container()['ContactController'] = fn() => new ContactController();
