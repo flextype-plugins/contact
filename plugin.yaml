@@ -1,5 +1,5 @@
 name: Contact
-version: 1.5.0
+version: 1.7.0
 description: Contact plugin for Flextype.
 icon: fas fa-envelope
 author:
@@ -11,5 +11,5 @@ bugs: https://github.com/flextype-plugins/Contact/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.14
+  flextype: 0.9.15
   phpmailer: '>=1.0.0'

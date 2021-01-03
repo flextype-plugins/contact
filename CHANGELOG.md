@@ -1,3 +1,12 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/flextype-plugins/contact) (2021-01-03)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.15
+* **core** add plugin.php file
+* **routes** improve controllers handling in routes for performance enhancements
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/flextype-plugins/contact) (2020-12-30)
 
