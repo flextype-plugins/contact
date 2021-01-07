@@ -1,7 +1,9 @@
 name: Contact
-version: 1.7.0
+version: 1.8.0
 description: Contact plugin for Flextype.
-icon: fas fa-envelope
+icon:
+  name: envelope
+  set: "fontawesome|solid"
 author:
   name: Sergey Romanenko
   email: support@flextype.org

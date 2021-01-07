@@ -1,3 +1,10 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/flextype-plugins/contact) (2021-01-07)
+
+### Features
+
+* **core** update code base for new Icon 2.0.0
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/flextype-plugins/contact) (2021-01-03)
 
