@@ -1,3 +1,10 @@
+<a name="1.8.1"></a>
+# [1.8.1](https://github.com/flextype-plugins/form/compare/v1.8.0...v1.8.1) (2021-01-09)
+
+### Improvements
+
+* **code** small improvements.
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/flextype-plugins/contact) (2021-01-07)
 

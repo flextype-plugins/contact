@@ -46,7 +46,7 @@ title: Contact
 default_field: title
 icon:
   name: envelope
-  set: fontawesome|solid
+  set: 'fontawesome|solid'
 size: 6/12
 hide: true
 form:
