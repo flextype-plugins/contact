@@ -86,7 +86,7 @@ https://github.com/flextype-plugins/form
 
 ```php
 // Show success message
-foreach ($message as flextype('flash')->getMessages()['success']) {
+foreach (flextype('flash')->getMessages()['success'] as $message) {
     echo $message;
 }
 
