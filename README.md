@@ -86,8 +86,10 @@ https://github.com/flextype-plugins/form
 
 ```php
 // Show success message
-foreach (flextype('flash')->getMessages()['success'] as $message) {
-    echo $message;
+if (isset(flextype('flash')->getMessages()['success']) and count(flextype('flash')->getMessages()['success']) > 0)
+    foreach (flextype('flash')->getMessages()['success'] as $message) {
+        echo $message;
+    }
 }
 
 // Render contact form
