@@ -82,6 +82,23 @@ form:
 Read documentation about creating forms here:  
 https://github.com/flextype-plugins/form
 
+### Usage in the PHP
+
+```php
+// Show success message
+foreach ($message as flextype('flash')->getMessages()['success']) {
+    echo $message;
+}
+
+// Render contact form
+echo flextype('form')
+        ->render(flextype('serializers')
+                    ->yaml()
+                    ->decode(filesystem()
+                                ->file(PATH['project'] . '/fieldsets/contact.yaml')
+                                ->get()), []);
+```
+
 ### Usage in the TWIG templates
 
 ```twig
