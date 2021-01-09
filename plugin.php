@@ -33,8 +33,3 @@ $contact_loader = require_once $contant_autoload;
  * Include web routes
  */
 include_once 'routes/web.php';
-
-/**
- * Include dependencies
- */
-include_once 'dependencies.php';
