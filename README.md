@@ -84,7 +84,7 @@ https://github.com/flextype-plugins/form
 
 ### Usage in the TWIG templates
 
-```
+```twig
 {# Show success message #}
 {% for message in flextype.flash.getMessages()['success'] %}
     {{ message }}
