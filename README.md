@@ -39,9 +39,9 @@ The following dependencies need to be downloaded and installed for Contact Plugi
 
 ### Create your own contact form
 
-here is an example of simpe contact form:
+here is an example of simple contact form:
 
-```
+```yaml
 title: Contact
 default_field: title
 icon: 'fas fa-envelope'
@@ -76,6 +76,9 @@ form:
       validation:
         required: true
 ```
+
+Read documentation about creating forms here:  
+https://github.com/flextype-plugins/form
 
 ### Usage in the TWIG templates
 
