@@ -44,7 +44,9 @@ here is an example of simple contact form:
 ```yaml
 title: Contact
 default_field: title
-icon: 'fas fa-envelope'
+icon:
+  name: envelope
+  set: fontawesome|solid
 size: 6/12
 hide: true
 form:
