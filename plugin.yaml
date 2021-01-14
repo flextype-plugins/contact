@@ -1,17 +1,17 @@
 name: Contact
-version: 1.8.2
+version: 1.9.0
 description: Contact plugin for Flextype.
 icon:
   name: envelope
   set: "fontawesome|solid"
 author:
   name: Sergey Romanenko
-  email: support@flextype.org
+  email: sergey.romanenko@flextype.org
   url: https://flextype.org
 homepage: https://github.com/flextype-plugins/Contact
 bugs: https://github.com/flextype-plugins/Contact/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.15
+  flextype: 0.9.16
   phpmailer: '>=1.0.0'

@@ -1,3 +1,10 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/flextype-plugins/form/compare/v1.8.2...v1.9.0) (2021-01-14)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.16
+
 <a name="1.8.2"></a>
 # [1.8.2](https://github.com/flextype-plugins/form/compare/v1.8.1...v1.8.2) (2021-01-09)
 
