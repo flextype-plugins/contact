@@ -1,9 +1,9 @@
 name: Contact
-version: 1.9.0
+version: 1.9.1
 description: Contact plugin for Flextype.
 icon:
   name: envelope
-  set: "fontawesome|solid"
+  set: bootstrap
 author:
   name: Sergey Romanenko
   email: sergey.romanenko@flextype.org

@@ -33,9 +33,9 @@ The following dependencies need to be downloaded and installed for Contact Plugi
 | default_subject | Default subject | Default subject for email |
 | message_success | Email sended. | Message to show after email send. |
 | from.name | Flextype | From name |
-| from.email | support@flextype.org | From email |
+| from.email | sergey.romanenko@flextype.org | From email |
 | to.name | Flextype | Receiver name. |
-| to.email | support@flextype.org | Receiver email |
+| to.email | sergey.romanenko@flextype.org | Receiver email |
 
 ### Create your own contact form
 

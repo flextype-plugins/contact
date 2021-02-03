@@ -55,10 +55,10 @@ class ContactController
 
         if (Filesystem::has(PATH['project'] . '/mailboxes/' . $mailbox)) {
             Filesystem::createDir(PATH['project'] . '/mailboxes/' . $mailbox . '/' . $post_data['uuid']);
-            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', $this->serializer->encode($post_data, 'yaml'));
+            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', flextype('serializers')->yaml()->encode($post_data));
         } else {
             Filesystem::createDir(PATH['project'] . '/mailboxes/' . $mailbox . '/' . $post_data['uuid']);
-            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', $this->serializer->encode($post_data, 'yaml'));
+            Filesystem::write(PATH['project'] . '/mailboxes/' . $mailbox . '/' .  $post_data['uuid'] . '/message.yaml', flextype('serializers')->yaml()->encode($post_data));
         }
 
         // From:

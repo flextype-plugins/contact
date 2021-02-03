@@ -1,3 +1,10 @@
+<a name="1.9.1"></a>
+# [1.9.1](https://github.com/flextype-plugins/form/compare/v1.9.0...v1.9.1) (2021-02-03)
+
+### Bug fixes
+
+* **core** fix ContactController
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/flextype-plugins/form/compare/v1.8.2...v1.9.0) (2021-01-14)
 
